@@ -1,0 +1,1 @@
+# frontend_lp_furniture
