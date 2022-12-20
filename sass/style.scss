@@ -1,12 +1,119 @@
 @import 'mixins';
 @import 'variables';
 @import 'myreset';
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
-
-
-body {
-	font-family: Arial, Helvetica, sans-serif;
+// ===  COMMON  ===
+html {
+	//now, our font size default is 10px;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
+body {
+	@include Sanspro;
+	font-weight: $fw-regular;
+}
+.wrapper-outer {
+	padding: 0 2rem;
+}
+.wrapper-inner {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 0 $pad-interblock 0;
+}
+// === / COMMON  ===
+
+// === NAVIGATION MENU ===
+.menu {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+	position: fixed;
+	top: 0;
+	width: calc(100% - $pad-outer * 2);
+	overflow: hidden;
+	background-color: $col-ondark;
+	& .wrapper-inner {
+		padding: 0;
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		padding: 3rem 0;
+	}
+	&__logo {
+		display: block;
+		width: 5.4rem;
+		height: 2rem;
+		& svg {
+			width: 5.4rem;
+			height: 2.4rem;
+		}
+	}
+	&__navigation {
+		display: flex;
+		justify-content: space-between;
+		height: 20px;
+		& ul {
+			padding: 0;
+			margin: 0;
+			font-size: 1.6rem;
+			line-height: 20px;
+			color: $col-primary;
+			list-style: none;
+		}
+	}
+	&__link {
+		display: inline;
+		margin: 0 $pad-interlinks 0 0;
+		&:last-child {
+			margin: 0;
+		}
+		& a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+}	
+// === / NAVIGATION MENU ===
+// === HERO ===
+.hero {
+	padding-top: 8rem;
+	background-color: $col-ondark;
+}	
+// === / HERO ===
+// === ABOUT ===
+.about {
+	background-color: $col-ondark;
+}		
+// === / ABOUT ===
+// === PRODUCTS ===
+.products {
+	background-color: $col-ondark;
+}		
+// === / PRODUCTS ===
+// === TESTIMONIALS ===
+.testimonials {
+	background-color: $col-primary;
+}		
+// === / TESTIMONIALS ===
+// === CONTACT ===
+.contact {
+	background-color: $col-ondark;
+}			
+// === / CONTACT ===
+// === FOOTER ===
+.footer {
+	padding: 0 0 0 0;
+	background-color: $col-background;
+}		
+// === / FOOTER ===
+
+
+
+
+
+
+
+
 
 
 
