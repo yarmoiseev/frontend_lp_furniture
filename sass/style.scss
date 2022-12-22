@@ -34,6 +34,20 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+h1, h2 {
+	color: $col-primary;
+}
+.l2-title {
+	font-weight: $fw-bold;
+	font-size: 6.4rem;
+	line-height: 6.4rem;
+}
+.l3-title {
+	font-size: 2rem;
+	line-height: 3rem;
+	font-weight: $fw-regular;
+	color: $col-secondary;
+}
 // === / COMMON  ===
 
 // === NAVIGATION MENU ===
@@ -44,6 +58,7 @@ a {
 	width: calc(100% - $pad-outer * 2);
 	// overflow: hidden; ?? obstacle to dropdown menu
 	background-color: $col-ondark;
+	z-index: 20;
 	& .wrapper-inner {
 		padding: 0;
 	}
@@ -262,14 +277,251 @@ a {
 // === / NAVIGATION MENU ===
 // === HERO ===
 .hero {
-	padding-top: 8rem;
+	padding: $pad-inner * 2 0 0 0;
 	background-color: $col-ondark;
+	&__titles {
+		max-width: 97rem;
+		text-align: center;
+		margin: 0 auto;	
+		padding: 0 $pad-outer 0 $pad-outer ;
+	}
+	&__title {
+		font-size: 9.6rem;
+		line-height: 9.6rem;		
+	}
+	&__arrow {
+		position: absolute;
+    top: -28rem;
+    left: 76rem;
+	}
+	&__subtitle {
+		max-width: 76.6rem;
+		margin: 0 auto;
+		padding-top: 4.4rem;
+	}
+	&__search {
+		padding-top: $pad-interlinks;
+		max-width: 77.7rem;
+    margin: 0 auto;
+	}
+	& form {
+		position: relative;
+	}
+	&__image {
+		background-image: url("../img/hero.png");
+		height: 100vh;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: -15rem 0 0 0;
+	}
 }	
+.search {
+	&__input {
+		box-sizing: border-box;
+		width: 100%;
+		height: 10rem;
+		border: none;
+		box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.12);
+		padding: 0 4.7rem;
+		font-size: 2rem;
+		line-height: 2.5rem;
+		color: $col-secondary;
+		outline: none;
+		&:focus {
+			border: 1px solid $col-accent;			
+		}
+	}
+	&__button {
+		position: absolute;
+    top: 37%;
+    right: 4rem;
+		border: none;
+		background-color: transparent;
+		z-index: 3;
+		cursor: pointer;
+	}
+}
+@media (max-width: 430px) {
+	.hero {
+		padding: $pad-inner * 1.2 0 0 0;
+		&__title {
+			font-size: 6rem;
+			line-height: 6rem;
+		}
+		&__image {
+			background-position: 68% 75%;
+		}
+	}
+}
+@media (max-width: 900px) {
+	.hero {
+		&__image {
+			background-position: 68% 75%;
+		}
+	}
+}
+@media (max-width: 1180px) {
+	.hero {
+		&__arrow {
+			display: none;
+		}
+	}
+}
 // === / HERO ===
 // === ABOUT ===
 .about {
+	padding: $pad-interblock $pad-outer 0 $pad-outer;
 	background-color: $col-ondark;
-}		
+		&__flex-row {
+			display: flex;
+			&_r {
+				flex: 0 1 50%;
+				padding: 0 1.5rem 0 0;
+			}
+			&_l {
+				flex: 0 1 50%;
+				padding: 0 0 0 1.5rem;
+			}
+		}
+		&__title {
+		}
+		&__subtitle {
+			padding: 2.4rem 0 0 0;
+			max-width: 47rem;
+		}
+		&__steps {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-column-gap: 30px;
+			grid-row-gap: 33px;
+			padding: 8rem 0 0 0;
+		}
+		&__step {
+		}
+		&__images {
+			padding: 13.6rem 0 0 0;
+			&__lc {
+				padding-top: 7.6rem;
+				& div:nth-child(2) {
+					padding-top: 30px;
+				}
+			}
+			&__rc {
+				padding-bottom: 7.6rem;
+				& div:nth-child(2) {
+					padding-top: 30px;
+				}
+			}
+		}
+		&__image {
+		}
+		&_vrt {
+		}
+		&_hrz {
+		}
+		&_sqr {
+		}
+}
+.step {
+		&__num {
+			color: $col-accent;
+		}
+		&__title {
+			padding-top: 1.8rem;
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+			color: $col-darkest;
+		}
+		&__text {
+			padding-top: 1.8rem;
+			color: $col-light;
+		}
+}
+@media (max-width: 1100px) {
+	.about {
+		&__flex-row {
+			&_r {
+				flex: 0 1 100%;
+			}
+			&_l {
+			}
+		}
+		&__title {
+		}
+		&__subtitle {
+		}
+		&__steps {
+		}
+		&__step {
+		}
+		&__images {
+			&__lc {
+				display: none;
+			}
+		}
+		&__image {
+			&_vrt {
+			}
+			&_hrz {
+			}
+			&_sqr {
+			}
+		}
+}
+.step {
+		&__num {
+		}
+		&__title {
+		}
+		&__text {
+		}
+	}
+}
+@media (max-width: 900px) {
+	.about {
+		&__flex-row {
+			flex-direction: column;
+			&_r {
+				
+			}
+			&_l {
+			}
+		}
+		&__title {
+		}
+		&__subtitle {
+		}
+		&__steps {
+		}
+		&__step {
+		}
+		&__images {
+			&__rc {
+				& div {
+					display: inline-block;
+				}
+			}
+		}
+		&__image {
+			&_vrt {
+			}
+			&_hrz {
+			}
+			&_sqr {
+			}
+		}
+}
+.step {
+		&__num {
+		}
+		&__title {
+		}
+		&__text {
+		}
+	}
+}
 // === / ABOUT ===
 // === PRODUCTS ===
 .products {
@@ -290,28 +542,20 @@ a {
 .footer {
 	color: $col-primary;
 	& .wrapper-inner {
-		padding: 8rem 0 1.8rem 0;
+		padding: $pad-inner 0 1.8rem 0;
 	}
 	background-color: $col-background;
 	&__container {
 		padding-right: 8.6rem;
 		@include flexbox();
 		justify-content: space-between;
-		margin-bottom: 3.5rem;
+		margin-bottom: 5.5rem;
 	}
 	&__address {
 		padding-right: 15rem;
 		& p {
 			line-height: 160%;
 		}
-	}
-	&__logo {
-	}
-	&__quick {
-	}
-	&__policy {
-	}
-	&__social {
 	}
 	&__copyright{
 		text-align: center;
