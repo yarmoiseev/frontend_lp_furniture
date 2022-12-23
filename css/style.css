@@ -361,7 +361,7 @@ h1, h2 {
   padding: 13.6rem 0 0 0;
 }
 .about__images__lc {
-  padding: 7.6rem 0 3rem 0;
+  padding: 7.6rem 0 0 0;
 }
 .about__images__rc {
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
