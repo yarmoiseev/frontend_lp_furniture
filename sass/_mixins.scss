@@ -8,3 +8,9 @@
 @mixin Sanspro {
 	font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
+
+@mixin grid-c-20 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 3rem;
+}

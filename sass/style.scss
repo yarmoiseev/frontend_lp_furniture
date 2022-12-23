@@ -44,7 +44,7 @@ h1, h2 {
 }
 .l3-title {
 	font-size: 2rem;
-	line-height: 3rem;
+	line-height: 3.2rem;
 	font-weight: $fw-regular;
 	color: $col-secondary;
 }
@@ -373,55 +373,33 @@ h1, h2 {
 .about {
 	padding: $pad-interblock $pad-outer 0 $pad-outer;
 	background-color: $col-ondark;
-		&__flex-row {
-			display: flex;
-			&_r {
-				flex: 0 1 50%;
-				padding: 0 1.5rem 0 0;
-			}
-			&_l {
-				flex: 0 1 50%;
-				padding: 0 0 0 1.5rem;
-			}
-		}
-		&__title {
+		&__grid-row {
+			@include grid-c-20;
 		}
 		&__subtitle {
 			padding: 2.4rem 0 0 0;
 			max-width: 47rem;
 		}
 		&__steps {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
-			grid-column-gap: 30px;
-			grid-row-gap: 33px;
 			padding: 8rem 0 0 0;
-		}
-		&__step {
 		}
 		&__images {
 			padding: 13.6rem 0 0 0;
 			&__lc {
-				padding-top: 7.6rem;
-				& div:nth-child(2) {
-					padding-top: 30px;
-				}
+				padding: 7.6rem 0 3rem 0;
 			}
 			&__rc {
+				grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
 				padding-bottom: 7.6rem;
-				& div:nth-child(2) {
-					padding-top: 30px;
-				}
 			}
 		}
 		&__image {
-		}
-		&_vrt {
-		}
-		&_hrz {
-		}
-		&_sqr {
+			& img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 }
 .step {
@@ -439,86 +417,13 @@ h1, h2 {
 			color: $col-light;
 		}
 }
-@media (max-width: 1100px) {
+@media (max-width: 550px) { //930
 	.about {
-		&__flex-row {
-			&_r {
-				flex: 0 1 100%;
-			}
-			&_l {
-			}
-		}
-		&__title {
-		}
-		&__subtitle {
-		}
-		&__steps {
-		}
-		&__step {
-		}
 		&__images {
+			padding-top: 8.6rem;
 			&__lc {
-				display: none;
+				padding-top: 0rem;
 			}
-		}
-		&__image {
-			&_vrt {
-			}
-			&_hrz {
-			}
-			&_sqr {
-			}
-		}
-}
-.step {
-		&__num {
-		}
-		&__title {
-		}
-		&__text {
-		}
-	}
-}
-@media (max-width: 900px) {
-	.about {
-		&__flex-row {
-			flex-direction: column;
-			&_r {
-				
-			}
-			&_l {
-			}
-		}
-		&__title {
-		}
-		&__subtitle {
-		}
-		&__steps {
-		}
-		&__step {
-		}
-		&__images {
-			&__rc {
-				& div {
-					display: inline-block;
-				}
-			}
-		}
-		&__image {
-			&_vrt {
-			}
-			&_hrz {
-			}
-			&_sqr {
-			}
-		}
-}
-.step {
-		&__num {
-		}
-		&__title {
-		}
-		&__text {
 		}
 	}
 }
