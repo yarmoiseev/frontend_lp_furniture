@@ -8,6 +8,12 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -91,12 +97,9 @@ h1, h2 {
   height: 4rem;
 }
 .menu__navigation ul {
-  padding: 0;
-  margin: 0;
   font-size: 1.6rem;
   line-height: 2rem;
   color: #112B3C;
-  list-style: none;
   white-space: nowrap;
 }
 .menu__link {
@@ -398,6 +401,86 @@ h1, h2 {
 }
 .products {
   background-color: #FFFFFF;
+}
+.products__title {
+  text-align: center;
+  padding: 0 0 4rem 0;
+}
+.products .p-nav {
+  text-align: center;
+  max-width: 54.4rem;
+  margin: 0 auto;
+}
+.products .p-nav ul {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: #828282;
+  display: flex;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.products .p-nav__item {
+  display: block;
+}
+.products .p-nav__item_active {
+  color: #F66B0E;
+}
+.products__container {
+  padding-top: 7.7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 27rem));
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  row-gap: 5rem;
+  justify-content: center;
+}
+.products .product-item__image {
+  height: 26.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(to top, #FFF8F0 41.666%, rgba(0, 0, 0, 0) 20%);
+}
+.products .product-item__image img {
+  max-width: 23rem;
+}
+.products .product-item a {
+  display: block;
+}
+.products .product-item__back {
+  width: 100%;
+  height: 11rem;
+  background-color: #FFF8F0;
+}
+.products .product-item__info {
+  padding: 0 2.2rem 2.2rem 2.2rem;
+  background-color: #FFF8F0;
+}
+.products .product-item__title {
+  padding: 0 0 0.2rem 0;
+  font-size: 2.4rem;
+  line-height: 3.84rem;
+  color: #112B3C;
+}
+.products .product-item__price {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 2.56rem;
+  color: #112B3C;
+  position: relative;
+  width: 100%;
+}
+.products .product-item__price::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../img/products/arrow-right.svg");
 }
 
 .testimonials {
