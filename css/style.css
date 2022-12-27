@@ -412,8 +412,6 @@ h1, h2 {
   margin: 0 auto;
 }
 .products .p-nav ul {
-  font-size: 2rem;
-  line-height: 3.2rem;
   color: #828282;
   display: flex;
   -moz-column-gap: 4rem;
@@ -428,7 +426,7 @@ h1, h2 {
   color: #F66B0E;
 }
 .products__container {
-  padding-top: 7.7rem;
+  padding-top: 7.6rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 27rem));
   -moz-column-gap: 3rem;
@@ -486,7 +484,49 @@ h1, h2 {
 .testimonials {
   background-color: #112B3C;
 }
-
+.testimonials .wrapper-inner {
+  padding: 0 0 7.6rem 0;
+}
+.testimonials__title {
+  color: #FFFFFF;
+  padding: 8rem 0 6rem 0;
+}
+.testimonials__slider-wrapper {
+  padding: 0 10rem 0 6.1rem;
+}
+.testimonials .slide {
+  display: flex;
+  -moz-column-gap: 13rem;
+       column-gap: 13rem;
+  padding: 0 0 5rem 3.9rem;
+}
+.testimonials .slide__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.testimonials .slide__par {
+  color: #BDBDBD;
+  padding: 0.3rem 0;
+}
+.testimonials .slide__title {
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 3.6rem;
+  line-height: 4.525rem;
+}
+.testimonials .slide__c-name {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #F66B0E;
+  padding: 0 0 0.8rem 0;
+}
+.testimonials .slide__c-position {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  color: #BDBDBD;
+}
 .contact {
   background-color: #FFFFFF;
 }
