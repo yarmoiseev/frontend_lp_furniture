@@ -14,6 +14,14 @@ ul {
   list-style: none;
 }
 
+blockquote {
+  margin: 0;
+}
+
+cite {
+  font-style: normal;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -485,25 +493,58 @@ h1, h2 {
   background-color: #112B3C;
 }
 .testimonials .wrapper-inner {
-  padding: 0 0 7.6rem 0;
+  padding-bottom: 12.6rem;
 }
 .testimonials__title {
   color: #FFFFFF;
   padding: 8rem 0 6rem 0;
 }
-.testimonials__slider-wrapper {
-  padding: 0 10rem 0 6.1rem;
-}
 .testimonials .slide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  gap: 3rem;
+}
+.testimonials .slide__column_r {
   display: flex;
-  -moz-column-gap: 13rem;
-       column-gap: 13rem;
-  padding: 0 0 5rem 3.9rem;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.testimonials .slide__image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.testimonials .slide__image::before {
+  content: "";
+  width: 16.5rem;
+  height: 16.5rem;
+  background-image: url("../img/Star.svg");
+  position: absolute;
+  top: 35.5rem;
+  left: 7rem;
+  background-repeat: no-repeat;
+}
+.testimonials .slide__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 37rem;
 }
 .testimonials .slide__text {
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
+  max-width: 47rem;
+  position: relative;
+}
+.testimonials .slide__text::before {
+  content: "";
+  width: 6rem;
+  height: 6rem;
+  background-image: url("../img/quote-up.svg");
+  position: absolute;
+  top: -6rem;
 }
 .testimonials .slide__par {
   color: #BDBDBD;
@@ -526,6 +567,25 @@ h1, h2 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   color: #BDBDBD;
+}
+.testimonials .slide__navigation {
+  max-width: 47rem;
+  padding: 6.7rem 0 0 0;
+  text-align: right;
+}
+.testimonials .slide__navigation a {
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.testimonials .slide__left {
+  padding-right: 1.2rem;
+}
+
+@media (max-width: 1110px) {
+  .slide__image::before {
+    display: none;
+  }
 }
 .contact {
   background-color: #FFFFFF;
@@ -576,5 +636,14 @@ h1, h2 {
   }
   .footer__address {
     padding-right: 0;
+  }
+}
+@media (max-width: 430px) {
+  .wrapper-inner {
+    padding-bottom: 3rem;
+  }
+  .l2-title {
+    font-size: 4.4rem;
+    line-height: 4.4rem;
   }
 }
