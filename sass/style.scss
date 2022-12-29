@@ -48,6 +48,15 @@ h1, h2 {
 	font-weight: $fw-regular;
 	color: $col-secondary;
 }
+img { 
+	display: block; 
+}
+input::placeholder {
+	color: $col-light;
+}
+textarea::placeholder {
+	color: $col-light;
+}
 // === / COMMON  ===
 
 // === NAVIGATION MENU ===
@@ -350,6 +359,11 @@ h1, h2 {
 			background-position: 68% 75%;
 		}
 	}
+	.search {
+		&__input {
+			font-size: 1.3rem;
+		}
+	}
 }
 @media (max-width: 900px) {
 	.hero {
@@ -385,6 +399,7 @@ h1, h2 {
 			padding: 13.6rem 0 0 0;
 			&__lc {
 				padding: $pad-tb 0 0 0;
+				grid-template-rows: 37rem 15.7rem;
 			}
 			&__rc {
 				grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
@@ -394,6 +409,7 @@ h1, h2 {
 		&__image {
 			& img {
 				width: 100%;
+				// commented because of sizing bugs
 				height: 100%;
 				object-fit: cover;
 			}
@@ -614,11 +630,114 @@ h1, h2 {
 		}
 		}		
 }
+@media (max-width: 430px) {
+	.slide {
+		&__text {
+			top: 5rem;
+		}
+		}		
+}
 // === / TESTIMONIALS ===
 // === CONTACT ===
 .contact {
-	background-color: $col-ondark;
-}			
+	padding-top: $pad-interblock;
+		background-color: $col-ondark;
+		&__grid-row {
+			&_r {
+			}
+			&_l {
+				padding: 2.8rem 0;
+			}
+		}
+		&__images {
+			padding: 0 0 0 0;
+			&__rc {
+				padding-right: 10rem;
+			}
+		}
+		&__form-wrapper {		
+			padding: 4rem 0 0 0 ;
+		}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+		& input, textarea {
+			width: 100%;
+			height: 6rem;
+			margin: 0;
+			padding: 2rem 2.1rem;
+			box-sizing: border-box;
+			font-size: 1.6rem;
+			line-height: 2.011rem;
+			color: $col-secondary;
+			outline: none;
+			border: 1px solid $col-primary;
+			&:focus {
+				border: 1px solid $col-accent;			
+			}
+		}
+		&__row{
+
+			&_dbl {
+				display: flex;
+				column-gap: 3rem;
+				& input {
+					flex: 0 1 27rem;
+				}
+			}
+		}
+		&_s {
+			
+		}
+		&__fname {
+			
+		}
+		&__lname {
+			
+		}
+		&__email {
+		}
+		#message {
+			height: 18rem;
+		}
+		#submit-c {
+			border: none;
+			color: $col-ondark;
+			background-color: $col-accent;
+			cursor: pointer;
+			&:hover {
+				background-color: darken($col-accent, 7%);
+				color: $col-ondark;
+			}
+		}
+	}
+}
+@media (max-width: 600px) {
+	.form {
+		&__row{
+
+			&_dbl {
+				flex-wrap: wrap;
+				row-gap: 2rem;
+				& #fname, #lname {
+					flex: 0 1 100%;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 850px) {
+	.contact {
+		padding-top: $pad-interblock * 0.7;
+		&__images {
+			&__rc {
+				display: none;
+			}
+		}
+	}
+}
 // === / CONTACT ===
 // === FOOTER ===
 .footer {
