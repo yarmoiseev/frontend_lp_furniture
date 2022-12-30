@@ -8,6 +8,7 @@ html {
 	//now, our font size default is 10px;
   font-size: 62.5%;
   box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 body {
 	@include Sanspro;
@@ -65,7 +66,6 @@ textarea::placeholder {
 	position: fixed;
 	top: 0;
 	width: calc(100% - $pad-outer * 2);
-	// overflow: hidden; ?? obstacle to dropdown menu
 	background-color: $col-ondark;
 	z-index: 20;
 	& .wrapper-inner {
@@ -131,9 +131,6 @@ textarea::placeholder {
 					color: $col-ondark;
 				}
 			}
-		}
-		&_drop {
-
 		}
 	}
 	&__icon { // Hamburger menu icon default position and display
@@ -207,7 +204,7 @@ textarea::placeholder {
 				justify-content: flex-start;
 			}	
 			&__icon {
-				display: flex;
+				@include flexbox();
 				z-index: 5;
 			}
 			& .navigation{
@@ -238,9 +235,6 @@ textarea::placeholder {
 				&.active {
 					transform: translate3d(0px, 0px, 0px);
 				}
-			}
-			&__link {
-
 			}
 	}
 	.icon-menu { // Hamburger menu icon active state
@@ -409,7 +403,6 @@ textarea::placeholder {
 		&__image {
 			& img {
 				width: 100%;
-				// commented because of sizing bugs
 				height: 100%;
 				object-fit: cover;
 			}
@@ -453,8 +446,8 @@ textarea::placeholder {
 		max-width: 54.4rem;
 		margin: 0 auto;
 			& ul {
-				color: $col-secondary;			
-				display: flex;
+				color: $col-secondary;
+				@include flexbox();
 				column-gap: 4rem;
 				flex-wrap: wrap;
 				justify-content: center;
@@ -477,7 +470,7 @@ textarea::placeholder {
 	.product-item {
 			&__image {
 				height: 26.4rem;
-				display: flex;
+				@include flexbox();
 				justify-content: center;
 				align-items: center;
 				background-color: $col-ondark; 
@@ -540,16 +533,13 @@ textarea::placeholder {
 	gap: 3rem;
 		&__column {
 			&_r {
-				display: flex;
+				@include flexbox();
 				flex-direction: column;
 				justify-content: flex-end;
 			}
-			&_l {
-				
-			}
 		}
 		&__image {
-			display: flex;
+			@include flexbox();
     	justify-content: center;
 			position: relative;
 			&::before {
@@ -628,14 +618,14 @@ textarea::placeholder {
 				display: none;
 			}
 		}
-		}		
+	}
 }
 @media (max-width: 430px) {
 	.slide {
 		&__text {
 			top: 5rem;
 		}
-		}		
+	}	
 }
 // === / TESTIMONIALS ===
 // === CONTACT ===
@@ -643,8 +633,6 @@ textarea::placeholder {
 	padding-top: $pad-interblock;
 		background-color: $col-ondark;
 		&__grid-row {
-			&_r {
-			}
 			&_l {
 				padding: 2.8rem 0;
 			}
@@ -658,9 +646,8 @@ textarea::placeholder {
 		&__form-wrapper {		
 			padding: 4rem 0 0 0 ;
 		}
-
 	.form {
-		display: flex;
+		@include flexbox();
 		flex-direction: column;
 		row-gap: 2rem;
 		& input, textarea {
@@ -679,25 +666,13 @@ textarea::placeholder {
 			}
 		}
 		&__row{
-
 			&_dbl {
-				display: flex;
+				@include flexbox();
 				column-gap: 3rem;
 				& input {
 					flex: 0 1 27rem;
 				}
 			}
-		}
-		&_s {
-			
-		}
-		&__fname {
-			
-		}
-		&__lname {
-			
-		}
-		&__email {
 		}
 		#message {
 			height: 18rem;
@@ -717,7 +692,6 @@ textarea::placeholder {
 @media (max-width: 600px) {
 	.form {
 		&__row{
-
 			&_dbl {
 				flex-wrap: wrap;
 				row-gap: 2rem;
@@ -795,7 +769,7 @@ textarea::placeholder {
 	.l2-title {
 		font-size: 4.4rem;
 		line-height: 4.4rem;
-}
+	}
 }
 
 
