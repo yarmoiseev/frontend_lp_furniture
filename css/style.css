@@ -87,19 +87,11 @@ input::-moz-placeholder {
   color: #BDBDBD;
 }
 
-input:-ms-input-placeholder {
-  color: #BDBDBD;
-}
-
 input::placeholder {
   color: #BDBDBD;
 }
 
 textarea::-moz-placeholder {
-  color: #BDBDBD;
-}
-
-textarea:-ms-input-placeholder {
   color: #BDBDBD;
 }
 
